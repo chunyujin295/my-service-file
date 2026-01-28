@@ -1,0 +1,14 @@
+[Unit]
+# 服务名，自定义，建议与该文件名一致
+Description=frpcClient
+After=network.target
+
+[Service]
+Type=simple
+# 服务要执行的命令，路径都是绝对路径
+ExecStart=/home/yj/SoftWare/frp/frpc -c /home/yj/SoftWare/frp/frpc.toml 
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

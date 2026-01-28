@@ -1,0 +1,14 @@
+[Unit]
+Description=A-Philosophy-of-Software-Design-zh VitePress Dev Server
+After=network.target
+
+[Service]
+Type=simple
+User=yj
+WorkingDirectory=/home/yj/SoftWare/A-Philosophy-of-Software-Design-zh/
+ExecStart=/usr/bin/npm run docs:dev
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

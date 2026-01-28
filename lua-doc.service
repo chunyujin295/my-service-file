@@ -1,0 +1,15 @@
+[Unit]
+Description=lua-doc VitePress Dev Server
+After=network.target
+
+[Service]
+Type=simple
+User=yj
+WorkingDirectory=/home/yj/SoftWare/lua-docs
+ExecStart=/usr/bin/npm run docs:dev
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+
