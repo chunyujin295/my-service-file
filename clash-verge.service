@@ -1,0 +1,8 @@
+[Unit] 
+Description=Clash Verge Service 
+After=network.target 
+[Service] 
+ExecStart=/usr/bin/clash-verge # 替换为你的Clash Verge可执行文件路径 
+Restart=always 
+[Install] 
+WantedBy=multi-user.target

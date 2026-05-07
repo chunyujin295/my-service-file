@@ -1,0 +1,23 @@
+[Unit]
+Description=fplayer-service-kernel
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/yj/SoftWare/fplayer-service-portable-kernel
+ExecStart=/home/yj/SoftWare/fplayer-service-portable-kernel/FPlayerFFServiceKernel
+Restart=always
+RestartSec=2
+LimitNOFILE=1048576
+Environment=SERVICE_MANAGED_MODE=1
+# 公网播放主机（FRP/反向代理场景推荐），用于 gateway 生成公网可访问地址
+Environment=SERVICE_PUBLIC_HOST=8.162.10.7
+
+# 若确需绑定低位端口，可启用以下能力（需结合实际安全策略评估）
+# AmbientCapabilities=CAP_NET_BIND_SERVICE
+# CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+# NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
