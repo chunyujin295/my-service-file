@@ -1,0 +1,19 @@
+[Unit]
+Description=FPlayer Static Website
+After=network.target
+
+[Service]
+Type=simple
+User=yj
+
+WorkingDirectory=/home/yj/code/FPlayer-WebSite
+
+ExecStart=/usr/bin/npm run start
+
+Restart=always
+RestartSec=3
+
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
