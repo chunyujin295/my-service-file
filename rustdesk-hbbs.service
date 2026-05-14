@@ -1,0 +1,13 @@
+[Unit]
+Description=RustDesk HBBS
+After=network.target
+
+[Service]
+Type=simple
+User=yj
+WorkingDirectory=/home/yj/SoftWare/rustdesk-server
+ExecStart=/home/yj/SoftWare/rustdesk-server/hbbs -r 8.162.10.7:21117
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

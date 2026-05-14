@@ -1,0 +1,13 @@
+[Unit]
+Description=RustDesk HBBR
+After=network.target
+
+[Service]
+Type=simple
+User=yj
+WorkingDirectory=/home/yj/SoftWare/rustdesk-server
+ExecStart=/home/yj/SoftWare/rustdesk-server/hbbr
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
